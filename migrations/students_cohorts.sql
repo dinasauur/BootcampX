@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS cohorts;
-DROP TABLE IF EXISTS cohort;
 DROP TABLE IF EXISTS students;
 
 CREATE TABLE cohorts (
@@ -26,8 +25,3 @@ CREATE TABLE students (
 --  To add tables to the database:
 --  From your psql session, type \i migrations/students_cohorts.sql
 --  Now enter \dt into your psql session to make sure the two tables have been created.
-
--- assignments
--- assignment_submissions
--- teachers
--- assistance_requests
