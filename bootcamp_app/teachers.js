@@ -1,7 +1,7 @@
 const { Pool } = require('pg');
 const args = process.argv.slice(2);
-const cohort_name = args[0] || 'JUL02';
-const values = [`${cohort_name}`];
+const cohortName = args[0] || 'JUL02';
+const values = [`${cohortName}`];
 
 const pool = new Pool({
   user: 'vagrant',
@@ -21,11 +21,11 @@ ORDER BY teacher;
 `;
 
 pool.query(quertString, values)
-.then(response => {
-  response.rows.forEach(row => {
-    console.log(`${row.cohort}: ${row.teacher}`);
+  .then(response => {
+    response.rows.forEach(row => {
+      console.log(`${row.cohort}: ${row.teacher}`);
+    });
   })
-})
-.catch(err => {
-  console.error('query error', err.stack)
-});
+  .catch(err => {
+    console.error('query error', err.stack);
+  });
